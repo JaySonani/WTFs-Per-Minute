@@ -1,6 +1,7 @@
 # WTF per Minute Viewer
 
-
+## Hackday Teams
+<img src="https://github.com/JaySonani/WTFs-Per-Minute/raw/main/assets/Teams.png" height=400></img>
 
 ## Getting started
 
