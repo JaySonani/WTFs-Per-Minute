@@ -1,0 +1,17 @@
+{
+  "firestore": {},
+  "emulators": {
+    "ui": {
+      "port": "4000",
+      "host": "0.0.0.0"
+    },
+    "firestore": {
+      "port": "4080",
+      "host": "0.0.0.0"
+    },
+    "pubsub": {
+      "port": "4085",
+      "host": "0.0.0.0"
+    }
+  }
+}

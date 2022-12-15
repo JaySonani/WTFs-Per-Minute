@@ -1,0 +1,98 @@
+{
+  "name": "wtfpm",
+  "displayName": "wtfpm",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:wtfpm.helloWorldt",
+    "onCommand:wtfpm.helloWorldc",
+    "onCommand:wtfpm.helloWorldr"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "WTF Per Minute",
+      "properties": {
+        "wtfpm.username": {
+          "type": "string",
+          "scope": "resource",
+          "default": "test user",
+          "description": "Username"
+        },
+        "wtfpm.project": {
+          "type": "string",
+          "scope": "resource",
+          "default": "test project",
+          "description": "Project"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "wtfpm.helloWorldt",
+        "title": "Testing"
+      },
+      {
+        "command": "wtfpm.helloWorldr",
+        "title": "Refactoring"
+      }, {
+        "command": "wtfpm.helloWorldc",
+        "title": "Comments"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "wtfpm.reason",
+          "group": "YourGroup@1"
+        }
+      ],
+      "wtfpm.reason": [{
+        "command": "wtfpm.helloWorldt",
+        "group": "YourGroup@1"
+      },
+      {
+        "command": "wtfpm.helloWorldc",
+        "group": "YourGroup@1"
+      },
+      {
+        "command": "wtfpm.helloWorldr",
+        "group": "YourGroup@1"
+      }]
+    },
+    "submenus": [{
+      "id": "wtfpm.reason",
+      "label": "WTF Event"
+    }]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}

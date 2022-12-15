@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  firebase-tools:
+    image: firebase-tools
+    build:
+      context: ./firebase-emulator
+    ports:
+      - "4085:4085"
+      - "4080:4080"
+      - "4000:4000"
